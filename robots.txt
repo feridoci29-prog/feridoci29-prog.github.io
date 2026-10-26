@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://feridoci29-prog.github.io/sitemap.xml
