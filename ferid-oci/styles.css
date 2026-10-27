@@ -36,3 +36,20 @@ footer{border-top:1px solid var(--line);padding:35px 0;background:#020712}.foot{
 @media(max-width:680px){.container{width:calc(100% - 36px)}.nav{height:66px}.brand{font-size:20px}.mobilemenu{display:block}.links{display:none;position:absolute;top:66px;left:0;right:0;background:#031229f9;border-bottom:1px solid #23679d;flex-direction:column;align-items:flex-start;gap:0;padding:12px 18px}.links.open{display:flex}.links a{padding:15px 8px}.switch{margin-left:0}.hero{min-height:unset}.hero .container{padding:84px 0 75px}.big{letter-spacing:-2px}.grid,.timeline{grid-template-columns:1fr}.section{padding:62px 0}.inspiration{min-height:270px}.symbol{width:90px;height:90px;margin:10px auto 22px}.symbol span{font-size:27px}.linkbox{padding:23px}}
 @media(hover:none),(pointer:coarse){.inspiration:hover{transform:none}.inspiration:before{display:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}[data-reveal]{opacity:1;transform:none}.inspiration:hover{transform:none}}
+
+
+/* Actual person portraits with controlled crops, shimmer and fallback initials */
+.inspiration .portrait-frame{position:relative;width:100%;height:178px;border:1px solid #368de477;border-radius:13px;overflow:hidden;margin:19px 0 21px;background:radial-gradient(ellipse at 50% 30%,#175a94,#06182e 72%);isolation:isolate;box-shadow:0 0 22px #137eff19}
+.inspiration .portrait-frame:before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(0deg,#04162a60,transparent 45%),linear-gradient(125deg,transparent 60%,#6addff19 80%,transparent 100%)}
+.inspiration .portrait-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:1;filter:saturate(.83) contrast(1.08);transition:filter .45s ease,transform .55s cubic-bezier(.2,.7,.3,1)}
+.inspiration:hover .portrait-frame img{filter:saturate(1.1) contrast(1.06);transform:scale(1.07)}
+.photo-fallback{position:absolute;inset:0;z-index:0;display:grid;place-items:center;color:#71caff;font:900 39px Manrope,Inter,sans-serif;letter-spacing:-1px}
+.inspiration .portrait-frame img[hidden]{display:none}
+.inspiration{min-height:432px}
+.inspiration h3{min-height:0;margin-top:0}
+.photo-credit{margin-top:13px;display:block;color:#789dc5;font-size:10px;line-height:1.5;word-break:normal}
+.photo-credit a{color:#a5d9ff;text-decoration:underline;text-decoration-color:#4a8ed47a;text-underline-offset:3px}
+.photo-credit a:hover{color:#e0f3ff}
+.photos-license-note{margin-top:17px;color:#8daacb;font-size:11px;line-height:1.7}
+@media(max-width:680px){.inspiration{min-height:unset}.inspiration .portrait-frame{height:200px;margin:14px 0 20px}}
+@media(prefers-reduced-motion:reduce){.inspiration .portrait-frame img{transition:none!important}.inspiration:hover .portrait-frame img{transform:none!important}}

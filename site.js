@@ -70,3 +70,6 @@ doc.querySelectorAll(".card,.mile,.contact-box").forEach(el=>{
   },{passive:true});
 });
 })();
+
+/* Remote inspiration photo fallbacks */
+document.querySelectorAll("img.person-photo").forEach(image=>{image.addEventListener("error",()=>{image.hidden=true},{once:true});if(image.complete&&image.naturalWidth===0)image.hidden=true;});
