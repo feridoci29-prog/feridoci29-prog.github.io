@@ -151,3 +151,25 @@ footer{padding:35px 0;background:#020711}.foot{display:flex;align-items:center;j
   .btn::after{display:none!important}
   #fx-progress{transition:none!important}
 }
+
+/* Connected portfolio + inspirations microsite */
+.inspo-nav-link{color:#68c3ff!important}
+.inspo-nav-link:hover{text-shadow:0 0 17px #36adff78}
+.inspo-preview-section{background:radial-gradient(ellipse at 92% 35%,rgba(0,98,220,.11),transparent 58%)}
+.inspo-preview-top{display:flex;align-items:center;justify-content:space-between;gap:25px;flex-wrap:wrap}
+.inspo-preview-top>.btn{flex-shrink:0}
+.inspo-preview-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:39px}
+.inspo-tile{position:relative;isolation:isolate;border:1px solid rgba(54,128,211,.32);background:linear-gradient(145deg,#0b2541,#041327);border-radius:16px;min-height:245px;padding:22px 18px;overflow:hidden;transition:transform .35s,border-color .3s,box-shadow .3s}
+.inspo-tile:before{content:"";position:absolute;inset:0;background:radial-gradient(230px circle at 50% 4%,#167adb34,transparent 70%);opacity:.5;z-index:-1;transition:opacity .3s}
+.inspo-tile:hover{transform:translateY(-7px);border-color:#55b6ff;box-shadow:0 20px 37px #0007,0 0 24px #087aff22}
+.inspo-tile:hover:before{opacity:1}
+.inspo-index{color:#62c3ff;font-size:12px;font-weight:850;letter-spacing:2px}
+.inspo-mark{width:86px;height:86px;margin:16px auto 20px;display:grid;place-items:center;border-radius:50%;border:1px solid #2b8dff73;background:radial-gradient(circle,#164c8b,#031c39);color:#87dfff;font:900 27px Manrope,Inter,sans-serif;box-shadow:0 0 22px #0786fa2b;transition:transform .35s,box-shadow .35s}
+.inspo-tile:hover .inspo-mark{transform:scale(1.055) rotate(-5deg);box-shadow:0 0 32px #268bff61}
+.inspo-tile h3{font-size:18px;line-height:1.35;margin:0 0 8px}
+.inspo-tile p{color:#a5bcda;font-size:12px;line-height:1.65;margin:0}
+.inspo-note{color:#839ab9;font-size:12px;margin:22px 0 0;line-height:1.8}
+.inspo-link-section{background:linear-gradient(110deg,#091a31,#031126)}
+@media(max-width:990px){.inspo-preview-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.inspo-preview-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.inspo-tile{min-height:205px;padding:17px 12px}.inspo-mark{width:67px;height:67px;font-size:20px}.inspo-tile h3{font-size:15px}.inspo-preview-top>.btn{width:100%}}
+@media(prefers-reduced-motion:reduce){.inspo-tile,.inspo-mark{transition:none!important}.inspo-tile:hover,.inspo-tile:hover .inspo-mark{transform:none!important}}
