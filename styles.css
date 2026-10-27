@@ -45,3 +45,109 @@ footer{padding:35px 0;background:#020711}.foot{display:flex;align-items:center;j
   .hero h1 { font-size: clamp(50px, 10vw, 74px); }
   .hero:after { width: 330px; height: 330px; top: 30%; right: -40%; filter: blur(95px); }
 }
+
+
+/* FERID OCI - INTERACTION ENHANCEMENTS V1 */
+/* restrained motion and shine, no portrait imagery */
+:root { --fx-neon: #48bfff; --fx-cyan: #68e5ff; }
+.hero { isolation: isolate; }
+.hero::before {
+  content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
+  background-image:
+    linear-gradient(90deg, transparent 0%, rgba(34,126,224,.038) 50%, transparent 100%),
+    repeating-linear-gradient(90deg, transparent 0, transparent 107px, rgba(93,172,255,.028) 108px, transparent 109px);
+  mask-image:linear-gradient(90deg,transparent 12%,#000 100%);
+}
+.hero-grid { position:relative; z-index:2; }
+.hero .name {
+  background-size:210% 100% !important;
+  animation:fx-gradient-flow 9s ease-in-out infinite alternate;
+}
+.brand strong { transition:text-shadow .28s,color .28s; }
+.brand:hover strong { color:#69c6ff; text-shadow:0 0 17px rgba(40,145,255,.62); }
+.topbar { transition:border-color .3s; }
+.topbar:hover { border-bottom-color:rgba(76,150,247,.37); }
+.navlinks a { transition:color .2s,text-shadow .2s; }
+.navlinks a:hover { text-shadow:0 0 16px rgba(43,141,255,.42); }
+.eyebrow .pulse { animation:fx-beacon 2.5s ease-in-out infinite; }
+.btn, .social, .card, .mile { -webkit-tap-highlight-color:transparent; }
+.btn { position:relative; overflow:hidden; isolation:isolate; }
+.btn::after {
+  content:""; position:absolute; inset:-20%; pointer-events:none;
+  background:linear-gradient(105deg, transparent 38%, rgba(255,255,255,.32) 48%, transparent 58%);
+  transform:translateX(-155%) skewX(-15deg);
+  transition:transform .75s cubic-bezier(.18,.7,.25,1);
+  z-index:1;
+}
+.btn:hover::after, .btn:focus-visible::after { transform:translateX(155%) skewX(-15deg); }
+.btn svg { transition:transform .24s; }
+.btn:hover svg:last-child { transform:translateX(4px); }
+.btn-primary { background-size:165% 165%; }
+.btn-primary:hover { box-shadow:0 0 0 1px rgba(112,218,255,.6),0 16px 40px rgba(0,110,255,.50),0 0 35px rgba(0,120,255,.22); }
+.social { position:relative; }
+.social:hover { box-shadow:0 0 18px rgba(42,141,255,.23),inset 0 0 10px rgba(35,125,231,.10); }
+.social svg,.social span { transition:transform .25s; }
+.social:hover svg,.social:hover span { transform:scale(1.09); }
+.card, .mile, .contact-box { position:relative; isolation:isolate; overflow:hidden; }
+.card::before,.mile::after,.contact-box::before {
+  content:""; position:absolute; inset:0; border-radius:inherit;
+  pointer-events:none; opacity:0; transition:opacity .3s ease;
+  background:radial-gradient(330px circle at var(--spot-x,50%) var(--spot-y,30%),rgba(51,151,255,.16),transparent 72%);
+  z-index:-1;
+}
+.card:hover::before,.mile:hover::after,.contact-box:hover::before,
+.card:focus-within::before,.mile:focus-within::after,.contact-box:focus-within::before { opacity:1; }
+.card { transition:transform .28s cubic-bezier(.2,.8,.2,1), border-color .25s,box-shadow .25s; }
+.card:hover { border-color:rgba(78,171,255,.7);box-shadow:0 16px 45px rgba(0,25,65,.45),0 0 0 1px rgba(68,164,255,.10); }
+.mile { transition:border-color .25s,transform .28s,box-shadow .25s; }
+.mile:hover { border-color:#408deb;transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,50,115,.25); }
+.factico { transition:border-color .25s,box-shadow .25s,transform .25s; }
+.fact:hover .factico { border-color:#52b7ff;box-shadow:0 0 22px rgba(36,134,255,.20);transform:translateY(-2px); }
+.quickfacts { box-shadow:0 -1px 0 rgba(58,157,255,.06),0 13px 38px rgba(0,17,47,.28); }
+.contact-box { transition:border-color .25s,box-shadow .25s; }
+.contact-box:hover { border-color:rgba(66,158,255,.65);box-shadow:0 0 28px rgba(8,89,210,.14); }
+/* Adds a very subtle reading-position line along top edge. */
+#fx-progress {
+  position:fixed;top:0;left:0;right:0;height:3px;z-index:100;
+  background:linear-gradient(90deg,#1181ff,#64dfff);
+  box-shadow:0 0 12px rgba(36,170,255,.45);
+  transform:scaleX(0);transform-origin:left center;pointer-events:none;
+  will-change:transform;
+}
+/* Desktop-only soft pointer aura, never captures clicks. */
+#fx-aura {
+  position:fixed;left:0;top:0;width:410px;height:410px;border-radius:50%;
+  background:radial-gradient(circle,rgba(22,121,255,.15) 0%,rgba(16,103,211,.07) 38%,transparent 70%);
+  pointer-events:none;z-index:0;opacity:0;will-change:transform,opacity;
+  transition:opacity .25s ease;
+}
+.fx-ready .hero .eyebrow { animation:fx-fade-rise .7s .08s both; }
+.fx-ready .hero h1 { animation:fx-fade-rise .85s .16s both; }
+.fx-ready .hero-sub { animation:fx-fade-rise .85s .25s both; }
+.fx-ready .hero-desc { animation:fx-fade-rise .85s .32s both; }
+.fx-ready .hero .buttons { animation:fx-fade-rise .85s .41s both; }
+.fx-ready .hero .socials { animation:fx-fade-rise .85s .49s both; }
+.fx-reveal { opacity:0; transform:translateY(20px); transition:opacity .72s ease var(--fx-delay,0ms),transform .72s cubic-bezier(.2,.7,.2,1) var(--fx-delay,0ms); }
+.fx-reveal.fx-in { opacity:1;transform:translateY(0); }
+@keyframes fx-fade-rise { from {opacity:0;transform:translateY(17px)} to {opacity:1;transform:translateY(0)} }
+@keyframes fx-gradient-flow { 0% {background-position:0% 50%} 100% {background-position:100% 50%} }
+@keyframes fx-beacon { 0%,100% {box-shadow:0 0 6px #38acff;opacity:.83} 50% {box-shadow:0 0 16px #36bfff,0 0 6px #68deff;opacity:1} }
+@media(max-width:740px) {
+  #fx-aura{display:none}
+  .hero::before{opacity:.35}
+  .card:hover,.mile:hover{transform:none}
+}
+@media(hover:none),(pointer:coarse) {
+  #fx-aura{display:none}
+  .btn::after{display:none}
+  .card::before,.mile::after,.contact-box::before{display:none}
+}
+@media(prefers-reduced-motion:reduce) {
+  .hero .name,.eyebrow .pulse{animation:none!important}
+  .fx-ready .hero .eyebrow,.fx-ready .hero h1,.fx-ready .hero-sub,
+  .fx-ready .hero-desc,.fx-ready .hero .buttons,.fx-ready .hero .socials { animation:none!important;opacity:1!important;transform:none!important }
+  .fx-reveal{opacity:1!important;transform:none!important;transition:none!important}
+  #fx-aura{display:none!important}
+  .btn::after{display:none!important}
+  #fx-progress{transition:none!important}
+}
