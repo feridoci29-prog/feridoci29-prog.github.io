@@ -32,6 +32,25 @@ body::after{content:"";position:fixed;inset:-20%;pointer-events:none;z-index:-1;
 @media(hover:hover) and (pointer:fine){a,button{cursor:pointer}a:hover,button:hover{filter:brightness(1.07)}}
 @media(max-width:760px){.hero{min-height:600px}body::before{background-position:65% top;background-image:linear-gradient(90deg,#050817ed,#050817ab),url('/assets/cosmic-background.svg')}#cursor-glow{display:none}}
 @media(prefers-reduced-motion:reduce){body::after,.hero:after{animation:none!important}.reveal-on-scroll{opacity:1!important;transform:none!important;transition:none!important}.touch-pulse{display:none}}
+
+/* Draft Wink founder hero photography */
+.hero{min-height:min(790px,94vh);background:linear-gradient(90deg,rgba(4,6,16,.94) 0%,rgba(5,7,20,.91) 24%,rgba(5,7,20,.66) 45%,rgba(5,7,20,.20) 70%,rgba(5,7,20,.1) 100%),url('/assets/draft-wink-hero.webp') center center/cover no-repeat,url('/assets/cosmic-background.svg') center center/cover no-repeat;isolation:isolate}
+.hero:before{background:linear-gradient(0deg,#060813 0%,transparent 22%,transparent 79%,#0608136b 100%)!important;z-index:0}
+.hero:after{display:none}
+.hero-inner{max-width:1110px}
+.hero .hero-inner>.eyebrow,.hero .hero-inner>h1,.hero .hero-inner>.role,.hero .hero-inner>.lead,.hero .hero-inner>.actions{max-width:660px}
+.hero .lead{max-width:590px;color:#c2c4d9;text-shadow:0 2px 15px #0009}
+.hero .stats{max-width:830px;background:#111428a8;backdrop-filter:blur(14px);box-shadow:0 18px 55px #04061690}
+.hero h1{font-size:clamp(54px,7.2vw,92px);text-shadow:0 8px 45px #000a}
+.hero{animation:dwHeroReveal 1.3s ease both}
+.hero .hero-inner{animation:dwTextRise 1s ease .15s both}
+.hero .eyebrow{backdrop-filter:blur(10px)}
+.hero::selection{background:#7854f4}
+@keyframes dwHeroReveal{from{opacity:.55}to{opacity:1}}
+@keyframes dwTextRise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@media(min-width:900px) and (prefers-reduced-motion:no-preference){.hero{background-size:cover;transition:background-position .7s ease}}
+@media(max-width:760px){.hero{min-height:690px;background:linear-gradient(180deg,#060814be 0%,#060814e8 55%,#060814 100%),url('/assets/draft-wink-hero.webp') 58% center/cover no-repeat,url('/assets/cosmic-background.svg') center center/cover no-repeat}.hero .stats{background:#111429db}.hero h1{font-size:clamp(46px,10vw,72px)}}
+@media(prefers-reduced-motion:reduce){.hero,.hero .hero-inner{animation:none!important}}
 </style></head><body>
 <header><nav class="container nav" aria-label="Main navigation"><a href="https://feridoci29-prog.github.io/" class="brand">Ferid <em>Oci.</em></a><div class="navlinks"><a href="#about">About</a><a href="#work">Projects</a><a href="#vision">Vision</a><a href="#connect">Connect</a></div><div class="languages" aria-label="Site language"><button type="button" data-lang="en" aria-label="Switch to English">ENG</button><button type="button" data-lang="tr" aria-label="Türkçeye geç">TR</button></div></nav></header>
 <main><section class="hero"><div class="container hero-inner"><span class="eyebrow">BAĞIMSIZ GELİŞTİRİCİ · AZERBAYCAN</span><h1>Merhaba, ben<span>Ferid Oci.</span></h1><p class="role">Draft Wink Kurucusu · Web Geliştirici</p><p class="lead">Fikirleri dijital ürünlere dönüştürüyorum. Şu anda yapay zekâ yardımıyla web siteleri ve uygulamalar geliştirmeyi kolaylaştırmayı amaçlayan <strong>Draft Wink</strong> üzerinde çalışıyorum.</p><div class="actions"><a class="btn btn-primary" href="#work">Projelerimi İncele ↗</a><a class="btn" href="#connect">Benimle Bağlantı Kur</a></div><div class="stats"><div class="stat"><small>ANA PROJE</small><b>Draft Wink</b></div><div class="stat"><small>DURUM</small><b>Geliştirme Aşamasında</b></div><div class="stat"><small>HEDEF</small><b>2028</b></div></div></div></section>
