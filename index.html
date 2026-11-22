@@ -35,13 +35,13 @@ header{height:72px;position:sticky;top:0;z-index:20;border-bottom:1px solid var(
 
 /* Main cinematic Draft Wink founder hero */
 :root{--violet:#917cff;--ice:#a7dfff}
-body{background:radial-gradient(ellipse 72% 40% at 73% 8%,#30204966,transparent 75%),#07070e}
-[data-theme=light] body{background:radial-gradient(ellipse 75% 40% at 68% 8%,#c9c4fa88,transparent 76%),#f8f8fd}
+body{background:#000}
+[data-theme=light] body{background:#000}
 .ambient .glow{opacity:.31}.ambient .glow.two{opacity:.22}
 header{height:75px;border-color:#a28bee1c}header .brand{font-weight:800;letter-spacing:-.055em;font-size:20px}
 nav a{font-size:13px}nav a:hover{color:#ad9bff}
 .hero{max-width:1400px;min-height:760px;display:grid;grid-template-columns:minmax(390px,.92fr) minmax(500px,1.24fr);gap:38px;padding:90px 38px 95px;text-align:left;align-items:center;position:relative}
-.hero:before{left:58%;top:4%;width:1000px;height:710px;opacity:.7;background:radial-gradient(ellipse at center,#54399225,transparent 68%)}
+.hero:before{display:none}
 .hero-inner{max-width:none}.hero-copy{position:relative;z-index:3;max-width:580px;padding-left:max(0px,calc((100vw - 1310px)/4))}
 .hero .eyebrow{font-size:10px;letter-spacing:.11em;border-color:#a48be83a;background:#21183370;color:#bcb0dd;padding:9px 14px}
 .hero-toptag{font-size:10px;color:#8f86b4;letter-spacing:.24em;font-weight:800;margin:38px 0 20px}
@@ -78,8 +78,8 @@ nav a{font-size:13px}nav a:hover{color:#ad9bff}
 @media(prefers-reduced-motion:reduce){.neon-halo,.art-grid,.workstation,.floating,.preview-sphere{animation:none!important}.workstation{transform:none}}
 </style></head>
 <body>
-<div class="ambient" aria-hidden="true"><div class="glow"></div><div class="glow two"></div><div class="glow three"></div></div><canvas id="ambient-particles" aria-hidden="true"></canvas>
-<header><div class="wrap navrow"><a class="brand" href="#home" aria-label="Ferid Oci home">Ferid<span>.</span> Oci</a><nav aria-label="Primary navigation"><a href="#about">About</a><a href="#project">Project</a><a href="#vision">Vision</a><a href="#connect">Connect</a></nav><div class="right"><button class="theme" id="theme" aria-label="Toggle light and dark mode" title="Toggle theme">◐</button></div></div></header>
+<canvas id="ambient-particles" aria-hidden="true"></canvas>
+<header><div class="wrap navrow"><a class="brand" href="#home" aria-label="Ferid Oci home">Ferid<span>.</span> Oci</a><nav aria-label="Primary navigation"><a href="#about">About</a><a href="#project">Project</a><a href="#vision">Vision</a><a href="#connect">Connect</a></nav><div class="right"></div></div></header>
 <main>
 <section class="hero wrap" id="home">
 <div class="hero-copy">
@@ -129,7 +129,7 @@ nav a{font-size:13px}nav a:hover{color:#ad9bff}
 </div></div></section>
 </main>
 <footer><div class="wrap"><span>© 2026 Ferid Oci. All rights reserved.</span><span>Independent builder · Web & AI</span></div></footer>
-<script>const toggle=document.getElementById('theme');toggle.addEventListener('click',()=>{const el=document.documentElement;const next=el.dataset.theme==='dark'?'light':'dark';el.dataset.theme=next;try{localStorage.setItem('ferid-theme',next)}catch(e){}});try{const saved=localStorage.getItem('ferid-theme');if(saved==='light'||saved==='dark')document.documentElement.dataset.theme=saved}catch(e){}</script>
+
 
 <script>
 (()=> {
